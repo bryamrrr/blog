@@ -8,7 +8,7 @@ const About = () => {
   return (
     <Layout>
       {posts.map(post => (
-        <PostPreview post={post} />
+        <PostPreview key={post.slug} post={post} />
       ))}
     </Layout>
   );

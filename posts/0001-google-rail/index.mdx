@@ -1,0 +1,45 @@
+---
+title: ¿Qué es el modelo RAIL de Google?
+description: Para hacer desarrollo web, y en lo particular desarrollo frontend, no solo basta con aprender lenguajes como HTML, CSS, JavaScript y su uso conjunto, también es importante conocer otras cosas como optimización de performance para sitios web.
+slug: google-rail
+author: Bryam Rodriguez
+level: basic
+tags: frontend,performance
+image: ./images/finish_line.jpg
+---
+
+Photo by [Kolleen Gladden](https://unsplash.com/@rockthechaos?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+
+Entender cómo y qué optimizar en tu sitio web puede ser muy complicado debido a la cantidad de información que existe. Podemos comenzar desde entender [cómo funcionan los browsers](https://www.html5rocks.com/en/tutorials/internals/howbrowserswork/) o comparar nuestras métricas con algo como RAIL.
+
+RAIL (Response, Animation, Idle y Load) es un modelo usado para evaluar la performance de un sitio web. RAIL fue propuesto en el 2015 por Paul Irish y lleva la insignia de ser un modelo centrado en el usuario. Sus valores sirven como referencia para entender el rendimiento de un sitio y las oportunidades de mejora del mismo.
+
+El modelo RAIL toma en cuenta todas las posibles interacciones de un usuario (desde que llega a una página hasta que se va), para asegurarnos que cada aspecto de la página es, de acuerdo a sus números, “rápido”.
+
+## Response (Respuesta)
+
+¿Qué tan rápido responde tu website a los inputs que ingresa el usuario? Si responde en 100 ms (milisegundos) o menos, es aceptable y se percibe rápido. Si demora más de 100 ms en responder ya se puede apreciar lento.
+
+Para asegurar que la respuesta se logre en este tiempo (100 ms), debemos asegurarnos que el trabajo se ejecute en 50 ms aproximadamente. En caso de no ser posible una respuesta en 100 ms, es importante dar feedback al usuario, ya sea mostrándole elementos visuales en forma de spinners o mensajes de texto detallando lo que sucede y, tal vez, cuánto tiempo más hay que esperar.
+
+## Animation (Animación)
+
+Cualquier animación visual tipo scroll o drag & drop, debe ser de máximo 60 fps (frames per second) o 16.6666ms ms por frame.
+
+Para alcanzar los 16 ms por frame, las animaciones deben ser de 10 fps debido a que los [browsers toman cerca de 6 ms en el render](https://developers.google.com/web/fundamentals/performance/rendering/) de cada frame.
+
+## Idle (Podría traducirse como trabajo en background)
+
+La prioridad siempre va ser la interacción del usuario con la web, es por eso que el trabajo en background debe realizarse en bloques alrededor de 50ms. En este trabajo pospuesto se debe ejecutar elementos secundarios que no van a ser la prioridad del usuario (no es la primera vista, por ejemplo).
+
+## Load (Carga inicial)
+
+Lo primero que verá el usuario en pantalla debe cargarse en 1 segundo y debe ser posible interactuar con ello en menos de 5 segundos. Por eso hay que optimizar la primera vista y dejar la carga de los demás elementos luego de esto.
+
+También es importante destacar que estos valores (1 y 5 segundos para Load) son valores de referencia y no leyes inamovibles. Hay casos muy variados en la web, y para cada caso pueden manejarse distintas métricas como tiempo adecuado.
+
+Por ejemplo, la bandeja de entrada de Gmail tarda unos segundos en cargar por completo (definitivamente más de 1 segundo y muchas veces más de 5). Sin embargo, los usuarios en general aceptan esperar este tiempo debido a la relevancia que tiene la data a la que quieren acceder y porque, una vez cargado, es fácil interactuar con ella. Estos tiempos de espera son muy distintos a los de los usuarios que quieren acceder a noticias de un magazine. Si la web de un magazine tarda mucho tiempo en cargar, es mucho más probable que un usuario abandone el sitio para buscar la información en otro lado.
+
+## Conclusiones
+
+Seguro que luego de ver estos valores de referencia de RAIL y compararlo con las métricas actuales de nuestro sitio podemos encontrar varias oportunidades de mejora. Ahora, el reto está en encontrar las herramientas y conocimientos necesarios para ir aplicando cambios de forma progresiva.
