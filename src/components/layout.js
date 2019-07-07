@@ -3,6 +3,7 @@ import { Global, css } from "@emotion/core";
 import Helmet from "react-helmet";
 import Header from "./header";
 import useSiteMetadata from "../hooks/use-sitemetadata";
+import { colors } from "../theme";
 
 const globalStyles = css`
   * {
@@ -49,6 +50,17 @@ const globalStyles = css`
 
   li {
     margin-top: 0.25rem;
+  }
+
+  a {
+    color: ${colors.blue};
+    padding: 0 0.125rem;
+    transition: color linear 150ms;
+    &:hover {
+      background-color: ${colors.blue};
+      border-radius: 0.25rem;
+      color: white;
+    }
   }
 `;
 

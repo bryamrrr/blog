@@ -17,9 +17,15 @@ const NavLink = styled(Link)`
   &.current-page {
     color: ${colors.blue};
   }
+
+  &:hover {
+    color: ${colors.blue};
+    background-color: transparent;
+  }
 `;
 
 const mainHeader = css`
+  background-color: white;
   padding: 0.5rem 1rem;
   position: fixed;
   top: 0;
@@ -46,6 +52,9 @@ const Header = () => (
       </NavLink>
       <NavLink to="/about" activeClassName="current-page">
         About
+      </NavLink>
+      <NavLink to="/blog" activeClassName="current-page">
+        Blog
       </NavLink>
     </nav>
   </header>
