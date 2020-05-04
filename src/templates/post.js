@@ -1,6 +1,8 @@
 import React from "react";
 import { graphql } from "gatsby";
-import { MDXRenderer } from "gatsby-mdx";
+import { css } from "@emotion/core";
+import { MDXRenderer } from "gatsby-plugin-mdx";
+import Image from "gatsby-image";
 import Layout from "../components/layout";
 
 export const query = graphql`
@@ -8,11 +10,17 @@ export const query = graphql`
     mdx(frontmatter: { slug: { eq: $slug } }) {
       frontmatter {
         title
+        description
         author
+        image {
+          sharp: childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+        }
       }
-      code {
-        body
-      }
+      body
     }
   }
 `;
@@ -21,7 +29,18 @@ const PostTemplate = ({ data: { mdx: post } }) => {
   return (
     <Layout>
       <h1>{post.frontmatter.title}</h1>
-      <MDXRenderer>{post.code.body}</MDXRenderer>
+      <p>{post.frontmatter.description}</p>
+      <Image
+        fluid={post.frontmatter.image.sharp.fluid}
+        css={css`
+          margin-bottom: 0.75rem;
+          * {
+            margin-top: 0;
+          }
+        `}
+        alt={post.image_alt || ""}
+      />
+      <MDXRenderer>{post.body}</MDXRenderer>
     </Layout>
   );
 };

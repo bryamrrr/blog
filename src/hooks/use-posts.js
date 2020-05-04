@@ -7,6 +7,7 @@ const usePosts = () => {
         nodes {
           frontmatter {
             author
+            description
             slug
             title
             image {
@@ -17,7 +18,6 @@ const usePosts = () => {
               }
             }
           }
-          excerpt
         }
       }
     }
@@ -28,8 +28,7 @@ const usePosts = () => {
     slug: post.frontmatter.slug,
     description: post.frontmatter.description,
     author: post.frontmatter.author,
-    image: post.frontmatter.image,
-    excerpt: post.excerpt
+    image: post.frontmatter.image
   }));
 };
 

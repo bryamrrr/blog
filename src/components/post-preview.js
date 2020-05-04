@@ -60,7 +60,7 @@ const PostPreview = ({ post }) => {
           color: ${colors.lightGray};
         `}
       >
-        {post.excerpt}
+        {post.description}
       </p>
       <Link to={url}>Lee este post &rarr;</Link>
     </article>

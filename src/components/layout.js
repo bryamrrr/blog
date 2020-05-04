@@ -67,7 +67,7 @@ const globalStyles = css`
 const mainStyles = css`
   margin: 4rem auto;
   max-width: 90vw;
-  width: 800px;
+  width: 700px;
 `;
 
 const Layout = ({ children }) => {
