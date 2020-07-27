@@ -19,8 +19,7 @@ const globalStyles = css`
   body {
     margin: 0;
     color: #555;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-      Helvetica, "Open Sans", sans-serif;
+    font-family: "IBM Plex Serif", serif;
     font-size: 18px;
     line-height: 1.4;
   }
@@ -38,6 +37,7 @@ const globalStyles = css`
   h6 {
     color: #333;
     line-height: 1.1;
+    font-family: "Montserrat", sans-serif;
 
     + * {
       margin-top: 0.5rem;
@@ -67,7 +67,7 @@ const globalStyles = css`
 const mainStyles = css`
   margin: 4rem auto;
   max-width: 90vw;
-  width: 700px;
+  width: 800px;
 `;
 
 const Layout = ({ children }) => {

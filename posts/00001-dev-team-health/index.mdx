@@ -1,0 +1,61 @@
+---
+title: Measuring the health of your development team
+description: Determine what things you should look at in you team to improve.
+slug: dev-team-health
+author: Bryam Rodriguez
+level: basic
+tags: engineering,development,management,the managers path
+# image: ./images/finish_line.jpg
+# image_author: Photo by [Kolleen Gladden](https://unsplash.com/@rockthechaos?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+---
+
+There are 3 important things that allow us to measure the team health:
+
+1. Frequency of releases
+2. Frequency of code checkins
+3. Frequency of incidents
+
+To improve this things we should interrogate every process to determine the value it should provide, and always ask yourself if it can be automated further.
+
+## Frequency of releases
+
+This requires breaking work down into small chunks.
+
+If there are no frequent releases in your team, ask yourself these questions:
+
+- What does the release process look like?
+- How long does it take? How often has something gone wrong in the past months regarding releases?
+- What does it look like when things go wrong?
+- How often have you had to delay or roll back a release due to problems?
+
+You’ll see some cracks:
+
+- Performing a release takes a long time
+- Engineers don’t feel ownership over their code quality and leave all of that work to a QA team (which creates a lot of back-and-forth communication delays)
+- Rolling back code, in case is needed, takes a long time
+- There are broken development builds, etc
+
+You have to push for technical process improvements that can lead to increased engineer productivity.
+
+You’ll need to solve some automation elements. Make some developer tooling to enable feature toggles.
+
+Push for time away from the product roadmap to support increasing engineering productivity, and set goals for the team that inspire them to move faster.
+
+## Frequency of code checkins
+
+Again, break work in small chunks. Engineers who don’t write tests often have a harder time breaking down their work. Learning TDD can help to get better at this skill.
+
+Write code for weeks without pushing it into a shared version control will slow down the team and cause problems.
+
+## Frequency of incidents
+
+If you’re building a brand new product, it may be more important to focus on features over stability, but if you own mission-critical systems, stability and incident minimization may be your top priority.
+
+The goal here is to balance wisk in such a way that neither incident frequency nor incident prevention turns into a full-time job for developers.
+
+Having a team of developers supporting the code have upsides and downsides.
+Downsides: It’s a huge contributor to burnout. Upside: You have the best people to help fix a problem.
+
+As a leader, you probably want to focus on providing time to actually design systems that are more stable, or writing code to fix the recurring incidents as they arise.
+
+Overfocusing on building systems that are defect-free, or pushing for error prevention by slowing down the development process, is almost as bad as moving too fast and releasing unstable code. When risk reduction turns into weeks of manual QA, excessive and slow code reviews, infrequent releases, the increased analysis can leave developers idle and restless, without necessarily reducing the risk of incidents.

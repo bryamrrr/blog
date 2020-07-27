@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: "Bryam Rodriguez | Software developer",
     description:
-      "Soy desarrollador de Software con más de 5 años de experiencia trabajando con lenguajes como JavaScript, principalmente en el lado del frontend. Ingeniero de sistemas de profesión, lifelong learner, amante de la tecnología y ávido lector.",
+      "I'm a Software developer with more than 6 years of experience working with JavaScript, mainly in the frontend. Systems engineer, lifelong learner, tech lover and avid reader",
   },
   plugins: [
     "gatsby-plugin-emotion",

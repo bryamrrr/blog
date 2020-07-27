@@ -1,16 +1,19 @@
 import React from "react";
+import { css } from "@emotion/core";
 import Layout from "../components/layout";
+
+const mainTagline = css`
+  max-width: 600px;
+`;
 
 const Pages = () => {
   return (
     <Layout>
-      <h1>About</h1>
-      <h2>Mi nombre es Bryam Rodriguez</h2>
-      <p>
-        Soy desarrollador de Software con más de 5 años de experiencia
-        trabajando con lenguajes como JavaScript, principalmente en el lado del
-        frontend. Ingeniero de sistemas de profesión, lifelong learner, amante
-        de la tecnología y ávido lector.
+      <h2>Hola, soy Bryam Rodriguez.</h2>
+      <p css={mainTagline}>
+        Soy desarrollador de Software desde 2014, dedicandome sobre todo a
+        tecnologías web. Disfruto escribiendo código de calidad, aprendiendo
+        constantemente y enseñando.
       </p>
     </Layout>
   );

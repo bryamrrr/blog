@@ -1,5 +1,12 @@
 import { graphql, useStaticQuery } from "gatsby";
 
+// image {
+//   sharp: childImageSharp {
+//     fluid {
+//       ...GatsbyImageSharpFluid_withWebp
+//     }
+//   }
+// }
 const usePosts = () => {
   const data = useStaticQuery(graphql`
     query {
@@ -10,25 +17,18 @@ const usePosts = () => {
             description
             slug
             title
-            image {
-              sharp: childImageSharp {
-                fluid {
-                  ...GatsbyImageSharpFluid_withWebp
-                }
-              }
-            }
           }
         }
       }
     }
   `);
 
-  return data.allMdx.nodes.map(post => ({
+  return data.allMdx.nodes.map((post) => ({
     title: post.frontmatter.title,
     slug: post.frontmatter.slug,
     description: post.frontmatter.description,
     author: post.frontmatter.author,
-    image: post.frontmatter.image
+    image: post.frontmatter.image,
   }));
 };
 
