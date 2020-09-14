@@ -18,8 +18,9 @@ const globalStyles = css`
   html,
   body {
     margin: 0;
+    background-color: rgb(250, 250, 250);
     color: #555;
-    font-family: "IBM Plex Serif", serif;
+    font-family: "Inter", sans-serif;
     font-size: 18px;
     line-height: 1.4;
   }
@@ -44,6 +45,18 @@ const globalStyles = css`
     }
   }
 
+  h1 {
+    font-size: 1.7rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+  }
+
   strong {
     color: #222;
   }
@@ -55,7 +68,7 @@ const globalStyles = css`
   a {
     color: ${colors.blue};
     padding: 0 0.125rem;
-    transition: color linear 150ms;
+    transition: color linear 100ms;
     &:hover {
       background-color: ${colors.blue};
       border-radius: 0.25rem;
@@ -65,9 +78,7 @@ const globalStyles = css`
 `;
 
 const mainStyles = css`
-  margin: 4rem auto;
-  max-width: 90vw;
-  width: 800px;
+  margin: 0 auto;
 `;
 
 const Layout = ({ children }) => {
@@ -82,6 +93,10 @@ const Layout = ({ children }) => {
       </Helmet>
       <Header />
       <main css={mainStyles}>{children}</main>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Montserrat:wght@500&display=swap"
+        rel="stylesheet"
+      ></link>
     </>
   );
 };

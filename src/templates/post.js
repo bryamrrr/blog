@@ -1,9 +1,13 @@
 import React from "react";
+import styled from "@emotion/styled";
 import { graphql } from "gatsby";
-import { css } from "@emotion/core";
 import { MDXRenderer } from "gatsby-plugin-mdx";
-// import Image from "gatsby-image";
 import Layout from "../components/layout";
+
+const PostContainer = styled.div`
+  margin: 4rem auto;
+  max-width: 740px;
+`;
 
 export const query = graphql`
   query($slug: String!) {
@@ -21,9 +25,11 @@ export const query = graphql`
 const PostTemplate = ({ data: { mdx: post } }) => {
   return (
     <Layout>
-      <h1>{post.frontmatter.title}</h1>
-      <p>{post.frontmatter.description}</p>
-      <MDXRenderer>{post.body}</MDXRenderer>
+      <PostContainer>
+        <h1>{post.frontmatter.title}</h1>
+        <p>{post.frontmatter.description}</p>
+        <MDXRenderer>{post.body}</MDXRenderer>
+      </PostContainer>
     </Layout>
   );
 };

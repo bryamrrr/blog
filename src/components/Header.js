@@ -9,9 +9,9 @@ const navStyles = css`
 `;
 
 const NavLink = styled(Link)`
-  color: #222;
+  color: white;
   font-family: "Montserrat", sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   margin: 0 0.5rem 0 0;
   padding: 0 0.25rem;
   text-decoration: none;
@@ -27,7 +27,8 @@ const NavLink = styled(Link)`
 `;
 
 const mainHeader = css`
-  padding-top: 30px;
+  background-color: ${colors.headerBlue};
+  padding: 30px 0;
 `;
 
 const innerContainer = css`
@@ -40,7 +41,8 @@ const innerContainer = css`
 `;
 
 const title = css`
-  font-size: 20px;
+  color: white;
+  font-size: 22px;
   font-weight: normal;
   &:hover {
     background-color: transparent;
@@ -62,10 +64,10 @@ const Header = () => (
         <h2 css={title}>Bryam Rodriguez</h2>
       </HomeLink>
       <nav css={navStyles}>
-        <NavLink to="/blog" activeClassName="current-page">
-          Blog
-        </NavLink>
         <NavLink to="/contact" activeClassName="current-page">
+          <span aria-label="man in a laptop" role="img">
+            🧑🏻‍💻
+          </span>{" "}
           Contacto
         </NavLink>
       </nav>
