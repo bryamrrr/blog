@@ -24,6 +24,10 @@ const NavLink = styled(Link)`
     color: ${colors.blue};
     background-color: transparent;
   }
+
+  &:visited {
+    color: white;
+  }
 `;
 
 const mainHeader = css`
