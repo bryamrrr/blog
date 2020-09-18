@@ -4,15 +4,17 @@ import { css } from "@emotion/core";
 import { Link } from "gatsby";
 import { colors } from "../theme";
 
+const navStyles = css`
+  margin: 0;
+`;
+
 const NavLink = styled(Link)`
-  color: #222;
-  font-size: 1rem;
-  font-weight: normal;
-  line-height: 1;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
   margin: 0 0.5rem 0 0;
-  padding: 0.25rem;
+  padding: 0 0.25rem;
   text-decoration: none;
-  font-weight: bold;
 
   &.current-page {
     color: ${colors.blue};
@@ -22,38 +24,58 @@ const NavLink = styled(Link)`
     color: ${colors.blue};
     background-color: transparent;
   }
+
+  &:visited {
+    color: white;
+  }
 `;
 
 const mainHeader = css`
-  background-color: white;
-  padding: 0.5rem 1rem;
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
-  &:before {
-    content: "";
-    top: calc(100% - 1px);
-    background-color: ${colors.blue};
-    display: block;
-    position: absolute;
-    right: 0px;
-    height: 1px;
-    width: 100%;
-    z-index: 1;
+  background-color: ${colors.headerBlue};
+  padding: 30px 0;
+`;
+
+const innerContainer = css`
+  width: 100%;
+  margin: 0 auto;
+  max-width: 800px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+const title = css`
+  color: white;
+  font-size: 22px;
+  font-weight: normal;
+  &:hover {
+    background-color: transparent;
+  }
+`;
+
+const HomeLink = styled(Link)`
+  text-decoration: none;
+  &:hover {
+    background-color: transparent;
+    cursor: pointer;
   }
 `;
 
 const Header = () => (
   <header css={mainHeader}>
-    <nav>
-      <NavLink to="/" activeClassName="current-page">
-        Home
-      </NavLink>
-      <NavLink to="/blog" activeClassName="current-page">
-        Blog
-      </NavLink>
-    </nav>
+    <div to="/" css={innerContainer}>
+      <HomeLink to="/">
+        <h2 css={title}>Bryam Rodriguez</h2>
+      </HomeLink>
+      <nav css={navStyles}>
+        <NavLink to="/contact" activeClassName="current-page">
+          <span aria-label="man in a laptop" role="img">
+            🧑🏻‍💻
+          </span>{" "}
+          Contacto
+        </NavLink>
+      </nav>
+    </div>
   </header>
 );
 
